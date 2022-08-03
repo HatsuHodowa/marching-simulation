@@ -84,7 +84,7 @@ while screen_open == True:
             box.process_event(event)
 
     # fill a white background
-    screen.fill((225, 225, 225))
+    screen.fill((0, 150, 0))
 
     # drawing all polygons & updating physics
     for poly in Polygon.get_surface_polygons(screen):
@@ -99,10 +99,3 @@ while screen_open == True:
     pygame.display.flip()
 
 pygame.quit()
-
-"""
-the stairs to the left
-in the building whereby one might rest
-across from the bell, this qr will dwell
-within the stairs of the NC swell
-"""

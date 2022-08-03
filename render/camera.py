@@ -8,16 +8,16 @@ class Camera:
     next_id = 0
     def __init__(self, **kwargs):
         self.cframe = CFrame()
-        self.zoom = 1
+        self.zoom = 0.1
         self.movement_enabled = True
 
-        self.zoom_min = 0.1
+        self.zoom_min = 0.05
         self.zoom_max = 2
 
         self.surface = None
         self.movespeed = 15
         self.rotatespeed = math.pi/6
-        self.zoomspeed = 0.25
+        self.zoomspeed = 0.125
 
         self.target = None
 

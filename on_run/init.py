@@ -1,4 +1,17 @@
-line = Line([Vector2(0, 0), Vector2(10, 10), Vector2(10, -10)], surface=screen)
-square = Rect(rect_width=5, rect_height=5, surface=screen)
+width = 85
+length = 160
+points = [Vector2(-length/2, -width/2), Vector2(-length/2, width/2), Vector2(length/2, width/2), Vector2(length/2, -width/2), Vector2(-length/2, -width/2)]
 
-line.velocity = Vector2(-2, 0)
+alt_bool = True
+for i in range(8, length, 8):
+    line_pos = i - length/2
+    if alt_bool:
+        points.append(Vector2(line_pos, -width/2))
+        points.append(Vector2(line_pos, width/2))
+    else:
+        points.append(Vector2(line_pos, width/2))
+        points.append(Vector2(line_pos, -width/2))
+
+    alt_bool = not alt_bool
+
+lines = Line(points, surface=screen, width=50)

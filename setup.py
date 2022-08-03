@@ -26,8 +26,11 @@ from frame import *
 from text_label import *
 from text_box import *
 
+# creating clock
+clock = pygame.time.Clock()
+
 # creating window
-screen = pygame.display.set_mode((500, 500))#, pygame.FULLSCREEN, pygame.RESIZABLE)
+screen = pygame.display.set_mode((1000, 600))#, pygame.FULLSCREEN, pygame.RESIZABLE)
 pygame.display.set_caption("marching simulation")
 screen_open = True
 last_time = time.time()
@@ -50,6 +53,11 @@ for file_name in os.listdir(on_run):
         thread.start()
         
 while screen_open == True:
+    
+    # max framerate
+    clock.tick(30)
+
+    # calculating dt
     dt = time.time() - last_time
     last_time = time.time()
 

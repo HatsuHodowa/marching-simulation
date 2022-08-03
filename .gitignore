@@ -1,0 +1,13 @@
+*.vsidx
+*.pyc
+*.suo
+*.lock
+*.sqlite
+.vs
+math/__pycache__
+render/__pycache__
+services/__pycache__
+shapes/__pycache__
+terrain/__pycache__
+.vs/2d-physics-pygame/v17/.suo
+.vs\2d-physics-pygame\v17\.suo

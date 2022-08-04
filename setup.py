@@ -13,18 +13,26 @@ sys.path.append("services")
 sys.path.append("terrain")
 sys.path.append("car_stuff")
 sys.path.append("user_interface")
+sys.path.append("marching")
+
 from polygon import *
 from regular_polygons import *
 from circle import *
 from rect import *
 from image_rect import *
 from line import *
+
 from camera import *
+
 from tagservice import *
+
 from gui_object import *
 from frame import *
 from text_label import *
 from text_box import *
+
+from band_member import *
+from squad import *
 
 # creating clock
 clock = pygame.time.Clock()

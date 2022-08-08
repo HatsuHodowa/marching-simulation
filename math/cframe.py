@@ -18,6 +18,11 @@ class CFrame: # m<row><column>
         self.look_vector = Vector2(m11, m21)
         self.right_vector = Vector2(m12, m22)
 
+        if self.position.magnitude != 0:
+            self.rotation = CFrame.from_components(m11, m12, 0, m21, m22, 0, m31, m32, m33)
+        else:
+            self.rotation = self
+
     def __str__(self):
         comp_strings = []
         for comp in self.components:

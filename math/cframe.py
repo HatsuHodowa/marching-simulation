@@ -16,7 +16,7 @@ class CFrame: # m<row><column>
 
         self.components = [m11, m12, m13, m21, m22, m23, m31, m32, m33]
         self.look_vector = Vector2(m11, m21)
-        self.right_vector = Vector2(m12, m22)
+        self.left_vector = Vector2(m12, m22)
 
         if self.position.magnitude != 0:
             self.rotation = CFrame.from_components(m11, m12, 0, m21, m22, 0, m31, m32, m33)
@@ -100,7 +100,7 @@ class CFrame: # m<row><column>
         self = CFrame(m13, m23)
         self.components = [m11, m12, m13, m21, m22, m23, m31, m32, m33]
         self.look_vector = Vector2(m11, m21)
-        self.right_vector = Vector2(m12, m22)
+        self.left_vector = Vector2(m12, m22)
         return self
 
     def angle(angle):
@@ -111,7 +111,7 @@ class CFrame: # m<row><column>
 
         self.components = [m11, m12, m13, m21, m22, m23, m31, m32, m33]
         self.look_vector = Vector2(m11, m21)
-        self.right_vector = Vector2(m12, m22)
+        self.left_vector = Vector2(m12, m22)
         return self
 
     def look_at(at, look_at):

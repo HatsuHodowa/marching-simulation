@@ -33,6 +33,7 @@ from text_box import *
 
 from band_member import *
 from squad import *
+from metronome import *
 
 # creating clock
 clock = pygame.time.Clock()

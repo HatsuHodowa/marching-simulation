@@ -85,13 +85,82 @@ line10r_2 = ImageRect("10.png", surface=screen)
 line10r_2.cframe = CFrame(320, width*2)
 line10r_2.size = Vector2(50, 50)
 
+# creating metronome
+metronome = Metronome(120)
+
 # creating band members
-squad = Squad(screen)
-time.sleep(2)
+squad = Squad(screen, metronome, CFrame(-7*5, -5*width/2 - 8*5) * CFrame.angle(math.pi/2))
+
+# save your tears
+squad.mark_time(8)
 squad.forward_march(8)
-squad.turn_right(180, 4)
-squad.mark_time(4)
 squad.forward_march(16)
-squad.turn_left(90, 2)
-squad.mark_time(6)
+squad.mark_time(8)
+squad.left_pinwheel(8)
+squad.right_face(); squad.forward_march(8)
+squad.mark_time(8)
 squad.forward_march(8)
+squad.right_face(); squad.left_pinwheel(8)
+squad.turn_right(180, 4); squad.mark_time(2)
+squad.mark_time(32 + 2)
+
+# take my breath
+squad.mark_time(4)
+squad.forward_march(4); squad.mark_time(4)
+squad.left_slant()
+squad.mark_time(16)
+squad.right_face(); squad.forward_march(8)
+squad.right_face(); squad.forward_march(8)
+squad.left_face(); squad.left_slant()
+squad.turn_right(180, 4); squad.mark_time(4)
+squad.right_pinwheel(8)
+squad.forward_march(8)
+squad.mark_time(16)
+
+# can't feel my face
+squad.mark_time(4)
+squad.left_slant()
+squad.right_face(), squad.forward_march(8)
+squad.left_face(); squad.mark_time(16)
+squad.left_face(); squad.forward_march(8)
+squad.right_face(); squad.mark_time(24)
+squad.mark_time(16)
+
+# guard feature
+metronome.tempo = 57
+squad.mark_time(16)
+
+metronome.tempo = 115
+squad.mark_time(288)
+
+# dance mix
+metronome.tempo = 95
+squad.right_slant()
+squad.forward_march(8)
+squad.mark_time(16)
+squad.mark_time(8) # stagger first 4
+squad.mark_time(12)
+
+metronome.tempo = 98
+squad.mark_time(8) # body rolls
+squad.turn_right(360, 8) # cross
+squad.mark_time(8) # lrlk rlrk
+squad.mark_time(8) # lrll rlrr
+squad.mark_time(8) # dips
+squad.turn_right(360, 8) # spin
+squad.mark_time(8) # rainbow
+squad.mark_time(8)
+
+squad.mark_time(4) # chant
+squad.mark_time(8) # ptp, cc, twirl
+squad.mark_time(8) # push, boogie, throw
+squad.mark_time(8) # up up surf surf down up push
+squad.mark_time(4) # horn up
+
+metronome.tempo = 110
+squad.mark_time(8) # splits
+squad.mark_time(8) # bow
+squad.mark_time(8) # unstagger
+squad.mark_time(32) # waiting for cue
+squad.forward_march(32) # off the field
+squad.mark_time(8)

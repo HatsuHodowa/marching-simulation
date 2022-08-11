@@ -166,3 +166,33 @@ class Squad:
 
         while len(members_complete) != self.member_count:
             time.sleep(0.1)
+
+    def collapse(self):
+        # finding member in front
+        front_member = None
+        front_dir = self.members[0].cframe.look_vector
+
+        for member in self.members:
+            if front_member == None:
+                front_member = member
+            else:
+                forward_dist = member.cframe.p.dot(front_dir)
+                if forward_dist > front_member.cframe.p.dot(front_dir):
+                    front_member = member
+
+        # collapsing
+        members_complete = []
+        goal_pos = front_member.cframe.p + front_dir*5 # one step
+        def coll(member):
+            dist = goal_pos.dot(front_dir) - member.cframe.p.dot(front_dir)
+            count = dist / 5
+            member.forward_march(count)
+            members_complete.append(member)
+
+        # running threads
+        for member in self.members:
+            thread = threading.Thread(target=coll, args=[member])
+            thread.start()
+
+        while len(members_complete) != self.member_count:
+            time.sleep(0.1)

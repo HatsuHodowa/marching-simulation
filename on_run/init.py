@@ -86,7 +86,7 @@ line10r_2.cframe = CFrame(320, width*2)
 line10r_2.size = Vector2(50, 50)
 
 # creating metronome
-metronome = Metronome(120)
+metronome = Metronome(240)
 
 # creating band members
 squad = Squad(screen, metronome, CFrame(-7*5, -5*width/2 - 8*5) * CFrame.angle(math.pi/2))
@@ -111,7 +111,7 @@ squad.left_slant()
 squad.mark_time(16)
 squad.right_face(); squad.forward_march(8)
 squad.right_face(); squad.forward_march(8)
-squad.left_face(); squad.left_slant()
+squad.left_face(); squad.collapse()
 squad.turn_right(180, 4); squad.mark_time(4)
 squad.right_pinwheel(8)
 squad.forward_march(8)

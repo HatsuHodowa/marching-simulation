@@ -17,18 +17,18 @@ class Squad:
             self.members.append(member)
 
     def left_member(self):
-        zero_three_dir = (self.members[3].cframe.p - self.members[0].cframe.p).unit
         left_dir = self.members[0].cframe.left_vector
-        dot_product = zero_three_dir.dot(left_dir)
-        angle = math.acos(dot_product)
-        
-        if round(angle, 100) == round(math.pi, 100):
-            return self.members[0]
-        elif round(angle, 100) == 0:
-            return self.members[3]
-        else:
-            print("Something's wrong with angles")
-            return None
+        left_member = None
+
+        for member in self.members:
+            left_dist = member.cframe.p.dot(left_dir)
+            if left_member == None:
+                left_member = member
+            elif left_member.cframe.p.dot(left_dir) < left_dist:
+                left_member = member
+
+        # returning
+        return left_member
 
     def right_member(self):
         left_member = self.left_member()
